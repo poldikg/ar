@@ -27,6 +27,10 @@
                     id="animated-asset"
                     src="assets/asset.gltf"
                 ></a-asset-item>
+                <a-asset-item
+                    id="animated-asset"
+                    src="assets/asset_deer.gltf"
+                ></a-asset-item>
             </a-assets>
 
             <a-marker
@@ -50,18 +54,38 @@
             </a-marker>
 
             <a-marker
-                id="animated-marker"
+                id="animated-marker-robot"
                 type="pattern"
                 preset="custom"
                 url="assets/marker_robot.patt"
                 raycaster="objects: .clickable"
                 emitevents="true"
                 cursor="fuse: false; rayOrigin: mouse;"
-                id="markerA"
+                id="markerB"
             >
                 <a-entity
                     id="bowser-model"
                     scale="1.4524550718299625 1.4524550718299625 1.4524550718299625"
+                    animation-mixer="loop: repeat"
+                    gltf-model="#animated-asset"
+                    class="clickable"
+                    gesture-handler
+                ></a-entity>
+            </a-marker>
+
+            <a-marker
+                id="animated-marker"
+                type="pattern"
+                preset="custom"
+                url="assets/marker_deer.patt"
+                raycaster="objects: .clickable"
+                emitevents="true"
+                cursor="fuse: false; rayOrigin: mouse;"
+                id="markerC"
+            >
+                <a-entity
+                    id="bowser-model"
+                    scale="0.2161552309582096 0.2161552309582096 0.2161552309582096"
                     animation-mixer="loop: repeat"
                     gltf-model="#animated-asset"
                     class="clickable"
